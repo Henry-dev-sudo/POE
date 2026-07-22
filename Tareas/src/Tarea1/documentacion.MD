@@ -65,8 +65,3 @@ npx tsx carritoDeCompras.ts
 npx tsx EntradaU.ts
 ```
 
----
-
-## Cierre
-
-Los tres ejercicios giran en torno a conceptos similares de TypeScript vistos desde ángulos distintos: `interface` y `?` para modelar datos que no siempre están completos, y estructuras condicionales (`if`, ternarios) para tomar decisiones dentro de la lógica sin depender de bloques extensos.
