@@ -1,0 +1,42 @@
+# ============================================
+# .gitignore - Enfoque "lista blanca"
+# Ignora TODO por defecto, y solo permite
+# los tipos de archivo que nos interesan.
+# ============================================
+
+# 1) Ignorar absolutamente todo primero
+*
+
+# 2) Permitir entrar a las carpetas (si no, Git no revisa su contenido)
+!*/
+
+# 3) Permitir los tipos de archivo que SÍ quieres subir
+!.gitignore
+!*.ts
+!*.tsx
+!*.py
+!*.md
+!*.js
+!*.jsx
+!*.html
+!*.css
+
+# 4) Pero aun así, bloquear archivos generados/pesados aunque coincidan arriba
+node_modules/
+dist/
+build/
+out/
+*.lock
+package-lock.json
+package.json
+yarn.lock
+pnpm-lock.yaml
+!.gitignore
+
+# 5) Bloquear carpetas de configuración de editores si no las quieres subir
+.vscode/
+
+# 6) Archivos de entorno y logs (nunca deben subirse)
+.env
+.env.*
+*.log
