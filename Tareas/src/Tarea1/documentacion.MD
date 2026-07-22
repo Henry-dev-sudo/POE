@@ -1,54 +1,72 @@
-Ejercicios prácticos de interfaces, funciones, condicionales y propiedades opcionales.
+# Práctica de TypeScript: Tipado, Interfaces y Funciones
 
-Instalación y configuración del entorno
-powershell
-# 1. Verificar que Node.js y npm estén instalados
+Este documento resume tres ejercicios trabajados en clase, cubriendo interfaces con campos opcionales, recorrido de arreglos y funciones con lógica condicional.
+
+## Preparación del entorno
+
+Pasos seguidos para dejar el proyecto listo en VS Code:
+
+```powershell
+# Confirmar versiones instaladas
 node -v
 npm -v
 
-# 2. Instalar TypeScript como dependencia del proyecto
+# Añadir TypeScript al proyecto
 npm install --save-dev typescript
 
-# 3. Generar el archivo de configuración
+# Crear el tsconfig.json
 npx tsc --init
 
-# 4. Instalar los tipos de Node (necesarios para usar TypeScript con Node.js)
+# Añadir definiciones de tipos para Node
 npm install -D @types/node
 
-# 5. Ejecutar cualquier archivo .ts directamente (compila y corre en un solo paso)
-npx tsx nombre-del-archivo.ts
+# Correr un archivo .ts sin compilar manualmente
+npx tsx archivo.ts
+```
 
-tsx se instala automáticamente la primera vez que se usa (npx lo descarga solo).
+> Nota: no hace falta instalar `tsx` por separado, `npx` lo descarga automáticamente la primera vez que se ejecuta.
 
-Ejercicio 1 — Registro de Asistentes
+---
 
-Objetivo: interfaces y propiedades opcionales.
+## Ejercicio 1: `RegistroEventos.ts`
 
-La interfaz Asistente define nombre y carrera como obligatorios, mientras que correo y asiento son opcionales (?). La función imprimirAsistente usa if para agregar esos datos al mensaje solo si existen, evitando mostrar undefined.
+**Tema:** interfaces con propiedades opcionales.
 
-Cómo correrlo: 
+Se define una interfaz `Asistente` donde `nombre` y `carrera` son campos requeridos, pero `correo` y `asiento` llevan `?` y por lo tanto pueden omitirse. Al construir el string de salida, se usan validaciones `if` para incluir esos campos únicamente cuando el objeto realmente los trae, así se evita imprimir `undefined` en pantalla.
 
+**Ejecución:**
+```bash
 npx tsx RegistroEventos.ts
+```
 
-Ejercicio 2 — Carrito de Compras
+---
 
-Objetivo: arreglos, forEach y operador ternario.
+## Ejercicio 2: `carritoDeCompras.ts`
 
-productos es un arreglo de objetos Producto. forEach recorre cada uno y calcula el precio final con un ternario: si tiene descuento, se aplica el porcentaje sobre el precio; si no, el precio queda igual. .toFixed(2) asegura 2 decimales al mostrar el resultado.
+**Tema:** arreglos tipados, `forEach` y operador ternario.
 
-Cómo correrlo:
+Se declara un arreglo `productos: Producto[]`, y con `forEach` se itera sobre cada elemento. El precio final se resuelve con una condición ternaria: cuando el producto tiene `descuento`, se calcula el precio reducido según ese porcentaje; en caso contrario se deja el precio original. El método `toFixed(2)` se aplica al final para mostrar siempre dos decimales, formato típico de un valor monetario.
 
+**Ejecución:**
+```bash
 npx tsx carritoDeCompras.ts
+```
 
-Ejercicio 3 — Calculadora de Entradas
+---
 
-Objetivo: función flecha, parámetro opcional y condicionales.
+## Ejercicio 3: `EntradaU.ts`
 
-calcularPrecio es una función flecha que recibe precioBase y tipo obligatorios, y codigo opcional. Si tipo es "VIP", suma $20 al precio. Si codigo es "Estudiante", aplica un 50% de descuento sobre el precio ya calculado.
+**Tema:** arrow function, parámetro opcional y condicionales encadenadas.
 
-Cómo correrlo:
+`calcularPrecio` está escrita como función flecha y recibe `precioBase` y `tipo` como parámetros obligatorios, más `codigo` como opcional. Primero se evalúa si `tipo` corresponde a `"VIP"`, sumando un recargo de $20. Después, si `codigo` es `"Estudiante"`, el precio acumulado hasta ese punto se reduce a la mitad. El valor resultante se retorna con `return`.
 
+**Ejecución:**
+```bash
 npx tsx EntradaU.ts
+```
 
-Conclusión:
-Los tres ejercicios muestran cómo TypeScript ayuda a definir estructuras claras (interface), manejar datos que pueden faltar (?) y tomar decisiones de forma corta con condicionales y ternarios en lugar de bloques largos de if/else.
+---
+
+## Cierre
+
+Los tres ejercicios giran en torno a conceptos similares de TypeScript vistos desde ángulos distintos: `interface` y `?` para modelar datos que no siempre están completos, y estructuras condicionales (`if`, ternarios) para tomar decisiones dentro de la lógica sin depender de bloques extensos.
