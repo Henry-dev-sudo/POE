@@ -331,8 +331,8 @@ Después se puede abrir `index.html` con un navegador o Live Server. También ex
 
 ```Referencia visual de la interfaz y del entorno de desarrollo````
 
-- [Vista de la biblioteca funcionando](laboratorio1/Captura%20de%20pantalla%202026-08-19%20213639.png): muestra el catálogo, las estadísticas, el formulario para agregar libros y los controles de filtrado.
-- [Entorno de desarrollo](laboratorio1/Captura%20de%20pantalla%202026-08-19%20214022.png): muestra los archivos del proyecto, el README y la compilación de TypeScript sin errores.
+- ![Vista de la biblioteca funcionando](laboratorio1/Captura%20de%20pantalla%202026-08-19%20213639.png): muestra el catálogo, las estadísticas, el formulario para agregar libros y los controles de filtrado.
+- ![Entorno de desarrollo](laboratorio1/Captura%20de%20pantalla%202026-08-19%20214022.png): muestra los archivos del proyecto, el README y la compilación de TypeScript sin errores.
 
 Las imágenes no son necesarias para ejecutar la aplicación; solo sirven como evidencia y apoyo visual de la interfaz y del proceso de desarrollo.
 
