@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Central | UNIVO</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero__contenido">
+            <span class="hero__tag">UNIVO · BIBLIOTECA CENTRAL</span>
+            <h1>Sistema de Gestión de Biblioteca</h1>
+            <p>Préstamos, devoluciones y favoritos en un solo lugar.</p>
+        </div>
+        <div class="hero__libro">📚</div>
+    </header>
+
+    <main class="principal">
+        <section class="resumen">
+            <div class="resumen__item">
+                <span>Libros en catálogo</span>
+                <strong id="contador-total">0</strong>
+            </div>
+            <div class="resumen__item resumen__item--verde">
+                <span>Disponibles</span>
+                <strong id="contador-disponibles">0</strong>
+            </div>
+            <div class="resumen__item resumen__item--oscuro">
+                <span>Catálogo visible</span>
+                <strong id="catalogo-conteo">0 resultados</strong>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel__titulo">
+                <span class="numero">01</span>
+                <div>
+                    <h2>Agregar un libro</h2>
+                    <p>Completa los datos para añadirlo al catálogo.</p>
+                </div>
+            </div>
+
+            <form id="form-libro" class="formulario">
+                <label>
+                    Título
+                    <input id="input-titulo" type="text" placeholder="Ej. El Principito" required>
+                </label>
+
+                <label>
+                    Autor
+                    <input id="input-autor" type="text" placeholder="Nombre del autor" required>
+                </label>
+
+                <label>
+                    Categoría
+                    <select id="input-categoria">
+                        <option value="LITERATURA">Literatura</option>
+                        <option value="CIENCIA">Ciencia</option>
+                        <option value="HISTORIA">Historia</option>
+                        <option value="TECNOLOGIA">Tecnología</option>
+                        <option value="ARTE">Arte</option>
+                    </select>
+                </label>
+
+                <label>
+                    Ejemplares
+                    <input id="input-ejemplares" type="number" min="1" value="1" required>
+                </label>
+
+                <label>
+                    Año
+                    <input id="input-anio" type="number" min="1" max="2100" value="2024" required>
+                </label>
+
+                <button class="btn btn--principal" type="submit">+ Agregar libro</button>
+            </form>
+        </section>
+
+        <section class="catalogo">
+            <div class="catalogo__encabezado">
+                <div>
+                    <span class="eyebrow">CATÁLOGO</span>
+                    <h2>Libros de la biblioteca</h2>
+                </div>
+
+                <div class="filtros">
+                    <select id="select-filtro-categoria">
+                        <option value="TODAS">Todas las categorías</option>
+                        <option value="CIENCIA">Ciencia</option>
+                        <option value="LITERATURA">Literatura</option>
+                        <option value="HISTORIA">Historia</option>
+                        <option value="TECNOLOGIA">Tecnología</option>
+                        <option value="ARTE">Arte</option>
+                    </select>
+                    <button class="filtro-btn" id="btn-orden-titulo">A-Z Título</button>
+                    <button class="filtro-btn" id="btn-orden-autor">A-Z Autor</button>
+                    <button class="filtro-btn" id="btn-solo-disponibles">Solo disponibles</button>
+                </div>
+            </div>
+
+            <div id="area-mensajes" class="mensajes"></div>
+            <div id="contenedor-libros" class="libros"></div>
+        </section>
+    </main>
+
+    <footer>
+        <span>Laboratorio #1 · Programación Orientada a Eventos</span>
+        <span>TypeScript · UNIVO · Agosto 2026</span>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -84,7 +84,7 @@ function actualizarContador(): void {
 
     // Si hay al menos un héroe, mostramos su universo en el footer
     if (heroes.length > 0) {
-        const ultimoUniverso = heroes[heroes.length - 1].universo;
+        const ultimoUniverso = heroes[heroes.length - 1]!.universo;
         DOM.dimensionFooter.textContent = ultimoUniverso;
     }
 }
