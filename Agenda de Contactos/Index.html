@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agenda de Contactos</title>
+    <link rel="stylesheet" href="src/styles/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>📞 Agenda de Contactos</h1>
+
+      <!-- Pestañas para cambiar de vista -->
+      <nav class="tabs">
+        <button type="button" class="tab activa" data-tab="agenda">Agenda</button>
+        <button type="button" class="tab" data-tab="resumen">Resumen</button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Vista 1: formulario y lista de contactos -->
+      <section id="vista-agenda" class="vista agenda">
+        <div class="panel">
+          <h2 id="titulo-form">Nuevo contacto</h2>
+
+          <form id="formulario" novalidate>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" placeholder="Ej: María López" />
+
+            <label for="telefono">Teléfono (maximo 8 dijitos) </label>
+            <input type="tel" id="telefono" placeholder="Ej: 7777-8888" />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Ej: maria@correo.com" />
+
+            <label for="categoria">Categoría</label>
+            <!-- Las opciones las agrega ContactoView.ts -->
+            <select id="categoria"></select>
+
+            <div class="botones-form">
+              <button type="submit" id="btn-guardar">Guardar</button>
+              <button type="button" id="btn-cancelar" hidden>Cancelar</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="panel">
+          <h2>Mis contactos</h2>
+
+          <!-- Búsqueda, filtro y orden (se combinan entre sí) -->
+          <div class="barra-herramientas">
+            <input
+              type="text"
+              id="buscar"
+              placeholder="🔍 Buscar por nombre, teléfono o email"
+            />
+
+            <select id="filtro-categoria" aria-label="Filtrar por categoría"></select>
+
+            <select id="orden" aria-label="Ordenar por nombre">
+              <option value="asc">Nombre A-Z</option>
+              <option value="desc">Nombre Z-A</option>
+            </select>
+
+            <button type="button" id="btn-exportar" class="btn-exportar">
+              Exportar CSV
+            </button>
+          </div>
+
+          <p id="contador" class="contador"></p>
+          <div id="lista" class="lista"></div>
+        </div>
+      </section>
+
+      <!-- Vista 2: estadísticas -->
+      <section id="vista-resumen" class="vista" hidden>
+        <div class="panel panel-resumen">
+          <h2>Resumen por categoría</h2>
+          <div id="resumen-contenido"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Aquí aparecen los avisos que se cierran solos -->
+    <div id="notificaciones" class="notificaciones" aria-live="polite"></div>
+
+    <!-- Se carga el JavaScript que genera TypeScript al compilar -->
+    <script type="module" src="dist/main.js"></script>
+  </body>
+</html>

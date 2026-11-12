@@ -1,0 +1,355 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f2f4f8;
+  color: #333;
+}
+
+/* Hace que el atributo hidden siempre esconda el elemento */
+[hidden] {
+  display: none !important;
+}
+
+header {
+  background-color: #2f4f8f;
+  color: white;
+  text-align: center;
+  padding: 16px 16px 0;
+}
+
+header h1 {
+  margin: 0 0 12px;
+  font-size: 1.6rem;
+}
+
+/* Pestañas */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.tab {
+  background-color: transparent;
+  color: #cfd9ee;
+  border-radius: 6px 6px 0 0;
+  padding: 10px 24px;
+  font-size: 0.95rem;
+}
+
+.tab.activa {
+  background-color: #f2f4f8;
+  color: #2f4f8f;
+  font-weight: bold;
+}
+
+/* Contenido principal */
+main {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 16px;
+}
+
+/* Dos columnas: formulario a la izquierda y lista a la derecha */
+.agenda {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.panel {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.panel h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+/* Formulario */
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: white;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #2f4f8f;
+}
+
+/* Campo con error */
+.invalido {
+  border-color: #c62828;
+  background-color: #fff5f5;
+}
+
+button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: white;
+  background-color: #2f4f8f;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.botones-form {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+#btn-cancelar {
+  background-color: #777;
+}
+
+/* Búsqueda, filtro y orden */
+.barra-herramientas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.barra-herramientas input,
+.barra-herramientas select {
+  margin-top: 0;
+}
+
+.barra-herramientas input {
+  flex: 1 1 100%;
+}
+
+.barra-herramientas select {
+  flex: 1;
+  width: auto;
+}
+
+.btn-exportar {
+  background-color: #1b6e2f;
+}
+
+.contador {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Lista de tarjetas */
+.lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 12px;
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px;
+  background-color: #fafbfd;
+}
+
+.tarjeta-cabecera {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tarjeta-info {
+  min-width: 0; /* permite que el texto largo se corte en vez de salirse */
+}
+
+.tarjeta h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+.tarjeta p {
+  margin: 3px 0;
+  font-size: 0.85rem;
+  word-break: break-word;
+}
+
+/* Avatar con iniciales */
+.avatar {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.avatar-familia {
+  background-color: #d9822b;
+}
+
+.avatar-trabajo {
+  background-color: #2f6fb5;
+}
+
+.avatar-amigos {
+  background-color: #3a9a5b;
+}
+
+/* Etiqueta de categoría */
+.etiqueta {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  color: white;
+}
+
+.etiqueta-familia {
+  background-color: #d9822b;
+}
+
+.etiqueta-trabajo {
+  background-color: #2f6fb5;
+}
+
+.etiqueta-amigos {
+  background-color: #3a9a5b;
+}
+
+.botones {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-editar {
+  background-color: #e69500;
+}
+
+.btn-eliminar {
+  background-color: #c62828;
+}
+
+.vacio {
+  color: #777;
+}
+
+/* Vista de resumen */
+.panel-resumen {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.resumen-total {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.fila-resumen p {
+  margin: 14px 0 4px;
+}
+
+.barra {
+  height: 14px;
+  background-color: #e6e9f0;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.relleno {
+  height: 100%;
+  border-radius: 7px;
+}
+
+.relleno-familia {
+  background-color: #d9822b;
+}
+
+.relleno-trabajo {
+  background-color: #2f6fb5;
+}
+
+.relleno-amigos {
+  background-color: #3a9a5b;
+}
+
+/* Notificaciones que se cierran solas */
+.notificaciones {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 320px;
+  max-width: calc(100% - 32px);
+}
+
+.aviso {
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+
+.aviso p {
+  margin: 2px 0;
+}
+
+.aviso.exito {
+  background-color: #1b6e2f;
+}
+
+.aviso.error {
+  background-color: #b00020;
+}
+
+.aviso.info {
+  background-color: #2f4f8f;
+}
+
+.aviso.saliendo {
+  opacity: 0;
+}
+
+/* En pantallas pequeñas se muestra una sola columna */
+@media (max-width: 760px) {
+  .agenda {
+    grid-template-columns: 1fr;
+  }
+}
